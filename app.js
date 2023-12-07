@@ -87,6 +87,23 @@ function generateSprintName() {
     }
     recentSuggestions.push(result.textContent);
     updateSuggestions();
+    result.addEventListener('click', () => {
+      var textToCopy = result.textContent;
+      navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+          console.log('Text copied to clipboard:', textToCopy);
+          const tooltipEl = document.createElement('div');
+          tooltipEl.textContent = `Sprintnavn kopiert!`
+          tooltipEl.className = 'tooltip';
+          container.appendChild(tooltipEl);
+          setTimeout(() => {
+            container.removeChild(tooltipEl);
+          }, 5000);
+        })
+        .catch((error) => {
+          console.error('Unable to copy text to clipboard', error);
+        });
+    });
   }, suspense);
   result.classList.remove('suggestion');
   emoji.classList.remove('suggestion');

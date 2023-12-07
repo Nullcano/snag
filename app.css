@@ -67,7 +67,9 @@ sub {
   font-size: 3rem;
 }
 .suggestion {
+  padding: 1rem;
   animation: party 2s linear infinite;
+  cursor: pointer;
 }
 @keyframes party {
   0% { color: rgb(255, 100, 100); transform: scale(1.05) }
@@ -249,7 +251,9 @@ button:focus {
   font-size: 28rem;
   transform: translate(0, 0) scale(1.5) rotate(15deg);
 }
-
+.emoji.suggestion:hover {
+  cursor: not-allowed;
+}
 .emoji.suggestion::after {
   content: "🤓";
 }
@@ -261,4 +265,17 @@ button:focus {
 }
 .emoji.suggestion:hover::before {
   content: "🗡️";
+}
+
+.tooltip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background: rgba(0,0,0,.75);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  border-radius: 1rem;
 }
