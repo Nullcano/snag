@@ -147,10 +147,34 @@ document.querySelector('.show-all').addEventListener('click', () => {
 })
 
 function updateSuggestions() {
-  suggestions.innerHTML = ``
-  recentSuggestions.forEach(s => {
-    suggestions.innerHTML += `
-      <div class="suggested-name">${s}</div>
-    `
-  })
+  var suggestions = document.querySelector('.suggestions');
+  suggestions.innerHTML = '';
+  recentSuggestions.forEach((suggestion, index) => {
+    var suggestionId = 'suggestion_' + index;
+    var suggestionDiv = document.createElement('div');
+    suggestionDiv.id = suggestionId;
+    suggestionDiv.className = 'suggested-name';
+    suggestionDiv.textContent = suggestion;
+    suggestionDiv.addEventListener('click', function() {
+      copyTextToClipboard(suggestion);
+    });
+    suggestions.appendChild(suggestionDiv);
+  });
+}
+
+function copyTextToClipboard(text) {
+  navigator.clipboard.writeText(text)
+    .then(() => {
+      console.log('Text copied to clipboard:', text);
+      const tooltipEl = document.createElement('div');
+      tooltipEl.textContent = `Sprintnavn kopiert!`
+      tooltipEl.className = 'tooltip';
+      container.appendChild(tooltipEl);
+      setTimeout(() => {
+        container.removeChild(tooltipEl);
+      }, 5000);
+    })
+    .catch((error) => {
+      console.error('Unable to copy text to clipboard', error);
+    });
 }

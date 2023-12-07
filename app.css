@@ -278,4 +278,19 @@ button:focus {
   backdrop-filter: blur(4px);
   color: #fff;
   border-radius: 1rem;
+  animation: fade 5s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes fade {
+  from {
+    backdrop-filter: blur(4px);
+    transform: translate(-50%);
+    opacity: 1;
+  }
+  to {
+    backdrop-filter: blur(16px);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
 }
