@@ -1,7 +1,7 @@
 body {
   margin: 0;
   height: 100vh;
-  background: #111;
+  background: hsl(266, 50%, 8%);
   color: #999;
   text-shadow: 0px 0px .5rem #000;
   font-family: 'Cabinet Grotesk', sans-serif;
@@ -12,6 +12,7 @@ body {
   justify-content: center;
 }
 .container {
+  position: relative;
   width: 60em;
   max-width: 100%;
   min-height: 35rem;
@@ -19,19 +20,34 @@ body {
   flex-direction: column;
   justify-content: space-between;
   gap: 2rem;
-  background: rgb(10, 10, 10);
+  background-color: hsl(266, 50%, 12%);
+  background-image: url('https://media1.giphy.com/media/iZXKuPtlTiCOJpeVMX/giphy.gif');
+  background-position: center;
+  background-size: cover;
   border-radius: 1rem;
+  box-shadow: 0 0 4rem #000;
   overflow: hidden;
 }
-.header {
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  background: hsla(266, 50%, 12%, 0.9);
+}
+.header {
+  position: relative;
+  margin: .5rem;
+  border-radius: 1rem;
   background: rgba(0,0,0,.5);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .title {
-  padding: 2rem;
+  padding: 1rem 2rem;
   color: #fff;
   font-size: 1.5rem;
   text-transform: uppercase;
@@ -41,7 +57,7 @@ sub {
   opacity: .5;
 }
 .info {
-  padding: 2rem;
+  padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
 }
@@ -52,12 +68,14 @@ sub {
   text-shadow: 0px 0px .5rem blueviolet;
 }
 .content {
+  position: relative;
   padding: 2rem;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  color: #fff;
   gap: 2rem;
 }
 .result {
@@ -97,7 +115,7 @@ button {
   transition: all .25s linear;
 }
 button:hover {
-  background: blueviolet;
+  background: rgba(0,0,0,1);
 }
 button:focus {
   transform: scale(0.9)
@@ -113,10 +131,6 @@ button:focus {
 
 .switch {
   padding: 1rem;
-  --line: #505162;
-  --dot: rgba(0,0,0,.75);
-  --circle: blueviolet;
-  --text: #ffffff;
   cursor: pointer;
 }
 .switch input {
@@ -205,6 +219,7 @@ button:focus {
   text-align: center;
   gap: 1rem;
   background-color: rgba(0,0,0,.75);
+  backdrop-filter: blur(4px);
   border-radius: 1rem;
   overflow-y: auto;
   z-index: 9;

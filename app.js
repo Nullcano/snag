@@ -1,9 +1,5 @@
-
-
-import { preWords } from "./words/preWords.js";
-import { midWords } from "./words/midWords.js";
-import { sufWords } from "./words/sufWords.js";
 import { commonWords } from "./words/commonWords.js";
+import { midWords } from "./words/midWords.js";
 import { firstNames } from "./words/firstNames.js";
 import { lastNames } from "./words/lastNames.js";
 
@@ -13,9 +9,9 @@ const button = document.querySelector('.generate');
 const result = document.querySelector('.result');
 const emoji = document.querySelector('.emoji');
 const suggestions = document.querySelector('.suggestions');
-const randomNum = () => { return Math.floor(Math.random() * 10) + 1 };
+const randomNum = () => { return Math.floor(Math.random() * 12) + 1 };
 const randomWord = (arr) => {	return arr[Math.floor(Math.random() * arr.length)]; }
-const allWords = [...preWords, ...midWords, ...sufWords, ...commonWords, ...firstNames, ...lastNames];
+const allWords = [...commonWords, ...midWords, ...firstNames, ...lastNames];
 const recentSuggestions = [];
 let suspense = 3000;
 let effects = true;
@@ -53,34 +49,40 @@ function generateSprintName() {
     emoji.classList.add('suggestion');
     switch(randomizer) {
       case 1:
-        result.textContent = `${randomWord(firstNames)} ${randomWord(lastNames)}`;
+        result.textContent = `${randomWord(commonWords)} ${randomWord(commonWords)}`;
         break;
       case 2:
-        result.textContent = `${randomWord(preWords)} ${randomWord(sufWords)}`;
+        result.textContent = `${randomWord(firstNames)} ${randomWord(commonWords)}`;
         break;
       case 3:
-        result.textContent = `${randomWord(firstNames)} ${randomWord(sufWords)}`;
+        result.textContent = `${randomWord(commonWords)} ${randomWord(lastNames)}`;
         break;
       case 4:
-        result.textContent = `${randomWord(preWords)} ${randomWord(lastNames)}`;
+        result.textContent = `${randomWord(firstNames)} ${randomWord(lastNames)}`;
         break;
       case 5:
-        result.textContent = `${randomWord(preWords)} ${randomWord(commonWords)}`;
+        result.textContent = `${randomWord(commonWords)}  ${randomWord(midWords)} ${randomWord(commonWords)}`;
         break;
       case 6:
-        result.textContent = `${randomWord(firstNames)} ${randomWord(midWords)} ${randomWord(lastNames)}`;
+        result.textContent = `${randomWord(firstNames)} ${randomWord(midWords)} ${randomWord(commonWords)}`;
         break;
       case 7:
-        result.textContent = `${randomWord(commonWords)} ${randomWord(midWords)} ${randomWord(preWords)}`;
+        result.textContent = `${randomWord(commonWords)} ${randomWord(midWords)} ${randomWord(lastNames)}`;
         break;
       case 8:
-        result.textContent = `${randomWord(lastNames)} ${randomWord(midWords)} ${randomWord(commonWords)}`;
+        result.textContent = `${randomWord(firstNames)} ${randomWord(midWords)} ${randomWord(lastNames)}`;
         break;
       case 9:
-        result.textContent = `${randomWord(preWords)} ${randomWord(midWords)} ${randomWord(commonWords)}`;
+        result.textContent = `${randomWord(commonWords)} ${randomWord(commonWords)} ${randomWord(midWords)} ${randomWord(commonWords)}`;
         break;
       case 10:
-        result.textContent = `${randomWord(firstNames)} ${randomWord(midWords)} ${randomWord(preWords)}`;
+        result.textContent = `${randomWord(firstNames)} ${randomWord(commonWords)} ${randomWord(midWords)} ${randomWord(commonWords)}`;
+        break;
+      case 11:
+        result.textContent = `${randomWord(commonWords)} ${randomWord(lastNames)} ${randomWord(midWords)} ${randomWord(commonWords)}`;
+        break;
+      case 12:
+        result.textContent = `${randomWord(firstNames)} ${randomWord(lastNames)} ${randomWord(midWords)} ${randomWord(commonWords)}`;
         break;
       default:
         result.textContent = `Try again`;
@@ -126,6 +128,7 @@ document.querySelector('.switch').addEventListener('click', () => {
 function updateEffects() {
   if (!effects) {
     suspense = 0;
+    container.style.backgroundImage = 'none';
     emoji.style.display = 'none';
     result.style.animation = 'none';
     document.querySelector('.big-hand').style.display = 'none';
@@ -133,6 +136,7 @@ function updateEffects() {
     document.querySelectorAll('.extra').forEach(el => el.style.display = 'none');
   } else {
     suspense = 3000;
+    container.style.backgroundImage = '';
     emoji.style.display = '';
     result.style.animation = '';
     document.querySelector('.big-hand').style.display = '';
