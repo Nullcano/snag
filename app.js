@@ -49,16 +49,16 @@ function generateSprintName() {
     emoji.classList.add('suggestion');
     switch(randomizer) {
       case 1:
-        result.textContent = `${randomWord(commonWords)} ${randomWord(commonWords)}`;
+        result.textContent = `${randomWord(commonWords)}  ${randomWord(midWords)} ${randomWord(commonWords)}`;
         break;
       case 2:
-        result.textContent = `${randomWord(firstNames)} ${randomWord(commonWords)}`;
+        result.textContent = `${randomWord(firstNames)} ${randomWord(midWords)} ${randomWord(commonWords)}`;
         break;
       case 3:
-        result.textContent = `${randomWord(commonWords)} ${randomWord(lastNames)}`;
+        result.textContent = `${randomWord(commonWords)} ${randomWord(midWords)} ${randomWord(lastNames)}`;
         break;
       case 4:
-        result.textContent = `${randomWord(firstNames)} ${randomWord(lastNames)}`;
+        result.textContent = `${randomWord(firstNames)} ${randomWord(midWords)} ${randomWord(lastNames)}`;
         break;
       case 5:
         result.textContent = `${randomWord(commonWords)}  ${randomWord(midWords)} ${randomWord(commonWords)}`;
