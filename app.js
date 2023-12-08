@@ -9,7 +9,7 @@ const button = document.querySelector('.generate');
 const result = document.querySelector('.result');
 const emoji = document.querySelector('.emoji');
 const suggestions = document.querySelector('.suggestions');
-const randomNum = () => { return Math.floor(Math.random() * 12) + 1 };
+const randomNum = () => { return Math.floor(Math.random() * 18) + 1 };
 const randomWord = (arr) => {	return arr[Math.floor(Math.random() * arr.length)]; }
 const allWords = [...commonWords, ...midWords, ...firstNames, ...lastNames];
 const recentSuggestions = [];
@@ -49,40 +49,58 @@ function generateSprintName() {
     emoji.classList.add('suggestion');
     switch(randomizer) {
       case 1:
-        result.textContent = `${randomWord(commonWords)}  ${randomWord(midWords)} ${randomWord(commonWords)}`;
+        result.textContent = `${randomWord(commonWords)} ${randomWord(commonWords)}`;
         break;
       case 2:
-        result.textContent = `${randomWord(firstNames)} ${randomWord(midWords)} ${randomWord(commonWords)}`;
+        result.textContent = `${randomWord(commonWords)} ${randomWord(firstNames)}`;
         break;
       case 3:
-        result.textContent = `${randomWord(commonWords)} ${randomWord(midWords)} ${randomWord(lastNames)}`;
+        result.textContent = `${randomWord(commonWords)} ${randomWord(lastNames)}`;
         break;
       case 4:
-        result.textContent = `${randomWord(firstNames)} ${randomWord(midWords)} ${randomWord(lastNames)}`;
+        result.textContent = `${randomWord(firstNames)} ${randomWord(commonWords)}`;
         break;
       case 5:
-        result.textContent = `${randomWord(commonWords)}  ${randomWord(midWords)} ${randomWord(commonWords)}`;
+        result.textContent = `${randomWord(lastNames)} ${randomWord(commonWords)}`;
         break;
       case 6:
-        result.textContent = `${randomWord(firstNames)} ${randomWord(midWords)} ${randomWord(commonWords)}`;
+        result.textContent = `${randomWord(firstNames)} ${randomWord(lastNames)}`;
         break;
       case 7:
-        result.textContent = `${randomWord(commonWords)} ${randomWord(midWords)} ${randomWord(lastNames)}`;
+        result.textContent = `${randomWord(commonWords)} ${randomWord(midWords)} ${randomWord(commonWords)}`;
         break;
       case 8:
-        result.textContent = `${randomWord(firstNames)} ${randomWord(midWords)} ${randomWord(lastNames)}`;
+        result.textContent = `${randomWord(commonWords)} ${randomWord(midWords)} ${randomWord(firstNames)}`;
         break;
       case 9:
-        result.textContent = `${randomWord(commonWords)} ${randomWord(commonWords)} ${randomWord(midWords)} ${randomWord(commonWords)}`;
+        result.textContent = `${randomWord(commonWords)} ${randomWord(midWords)} ${randomWord(lastNames)}`;
         break;
       case 10:
-        result.textContent = `${randomWord(firstNames)} ${randomWord(commonWords)} ${randomWord(midWords)} ${randomWord(commonWords)}`;
+        result.textContent = `${randomWord(firstNames)} ${randomWord(midWords)} ${randomWord(commonWords)}`;
         break;
       case 11:
-        result.textContent = `${randomWord(commonWords)} ${randomWord(lastNames)} ${randomWord(midWords)} ${randomWord(commonWords)}`;
+        result.textContent = `${randomWord(lastNames)} ${randomWord(midWords)} ${randomWord(commonWords)}`;
         break;
       case 12:
-        result.textContent = `${randomWord(firstNames)} ${randomWord(lastNames)} ${randomWord(midWords)} ${randomWord(commonWords)}`;
+        result.textContent = `${randomWord(firstNames)} ${randomWord(lastNames)} ${randomWord(commonWords)}`;
+        break;
+      case 13:
+        result.textContent = `${randomWord(commonWords)} ${randomWord(commonWords)} ${randomWord(midWords)} ${randomWord(commonWords)}`;
+        break;
+      case 14:
+        result.textContent = `${randomWord(commonWords)} ${randomWord(midWords)} ${randomWord(commonWords)} ${randomWord(commonWords)}`;
+        break;
+      case 15:
+        result.textContent = `${randomWord(commonWords)} ${randomWord(firstNames)} ${randomWord(midWords)} ${randomWord(commonWords)}`;
+        break;
+      case 16:
+        result.textContent = `${randomWord(commonWords)} ${randomWord(lastNames)} ${randomWord(midWords)} ${randomWord(commonWords)}`;
+        break;
+      case 17:
+        result.textContent = `${randomWord(firstNames)} ${randomWord(commonWords)} ${randomWord(midWords)} ${randomWord(commonWords)}`;
+        break;
+      case 18:
+        result.textContent = `${randomWord(lastNames)} ${randomWord(commonWords)} ${randomWord(midWords)} ${randomWord(commonWords)}`;
         break;
       default:
         result.textContent = `Try again`;
