@@ -59,8 +59,8 @@ main .content {
 }
 .result {
   padding: 1rem;
-  max-width: 28ch;
-  font-size: 3rem;
+  max-width: 32ch;
+  font-size: 2.5rem;
   cursor: pointer;
 }
 .controls {
