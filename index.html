@@ -5,42 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SNAG</title>
   <link href="app.css" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800&display=swap" rel="stylesheet"> 
+  <link href="https://api.fontshare.com/v2/css?f[]=azeret-mono@400&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="top">
-    <div class="switch">
-      <div class="light"></div>
-      <span class="switch-text">Slå av effekter</span>
+  <header>
+    <div class="deco">⬤ ⬤ ⬤</div>
+    <div class="title">
+      <strong>SNAG</strong>
     </div>
     <div class="suggestions-provider" tabindex="0">
-      <div class="show-all">Vis forrige forslag</div>
-      <div class="suggestions">Generer noen først du 😉</div>
+      <div class="show-all">Historikk</div>
+      <div class="suggestions">Du har ikke generert noe enda...</div>
     </div>
-  </div>
-  <div class="container">
-    <div class="header">
-      <div class="title">
-        <sup>S</sup><sub>print</sub><sup>na</sup><sub>vn</sub><sup>g</sup><sub>enerator</sub>
-      </div>
-      <div class="info">
-        <div><span class="extra">Vi har funnet</span> <span class="total-words">0</span> ord</div>
-        <div class="extra">til denne generatoren. 🎉</div>
-      </div>
-    </div>
+  </header>
+  <main>
     <div class="content">
-      <div class="result">Tenk for meg</div>
-      <div class="emoji">💡</div>
+      <div class="result">Klikk Generer Sprintnavn For Å Generere</div>
+      <div class="controls">
+        <button class="generate">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56"><path d="M26.688 12.66c.28 0 .421-.164.492-.422.726-3.914.68-4.008 4.758-4.781.28-.047.445-.21.445-.492 0-.281-.164-.446-.446-.492-4.054-.82-3.937-.914-4.757-4.782-.07-.257-.211-.421-.492-.421-.282 0-.422.164-.493.421-.82 3.868-.68 3.961-4.758 4.782-.257.046-.445.21-.445.492 0 .281.188.445.445.492 4.079.82 4.032.867 4.758 4.781.07.258.211.422.492.422ZM15.344 28.785c.445 0 .75-.281.797-.703.843-6.258 1.054-6.258 7.523-7.5.422-.07.727-.352.727-.797 0-.422-.305-.726-.727-.797-6.469-.89-6.703-1.101-7.523-7.476-.047-.422-.352-.727-.797-.727-.422 0-.727.305-.774.75-.773 6.281-1.101 6.258-7.523 7.453-.422.094-.727.375-.727.797 0 .469.305.727.82.797 6.376 1.031 6.657 1.195 7.43 7.453.047.469.352.75.774.75Zm15.89 25.945c.61 0 1.055-.445 1.172-1.078 1.664-12.843 3.469-14.789 16.172-16.195.656-.07 1.102-.563 1.102-1.172 0-.61-.446-1.078-1.102-1.172-12.703-1.406-14.508-3.351-16.172-16.195-.117-.633-.562-1.055-1.172-1.055-.609 0-1.054.422-1.148 1.055-1.664 12.844-3.492 14.789-16.172 16.195-.68.094-1.125.563-1.125 1.172 0 .61.445 1.102 1.125 1.172 12.656 1.664 14.414 3.375 16.172 16.195.094.633.539 1.078 1.148 1.078Z"/></svg>
+          <span>Generer sprintnavn</span>
+        </button>
+        <button class="snapshot">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1920">
+            <path fill-rule="evenodd" d="M1706.67 106.667h-320V0h320C1824.49 0 1920 95.513 1920 213.333v320h-106.67v-320c0-58.91-47.75-106.666-106.66-106.666ZM533.333 0v106.667h-320c-58.91 0-106.666 47.756-106.666 106.666v320H0v-320C0 95.513 95.513 0 213.333 0h320ZM0 1386.67h106.667v320c0 58.91 47.756 106.66 106.666 106.66h320V1920h-320C95.513 1920 0 1824.49 0 1706.67v-320ZM1386.67 1920v-106.67h320c58.91 0 106.66-47.75 106.66-106.66v-320H1920v320c0 117.82-95.51 213.33-213.33 213.33h-320ZM1280 960c0 176.73-143.27 320-320 320-176.731 0-320-143.27-320-320 0-176.731 143.269-320 320-320 176.73 0 320 143.269 320 320Zm106.67 0c0 235.64-191.03 426.67-426.67 426.67-235.641 0-426.667-191.03-426.667-426.67 0-235.641 191.026-426.667 426.667-426.667 235.64 0 426.67 191.026 426.67 426.667Z"/>
+          </svg>
+          <span>Kopier skjermbilde</span>
+        </button>
+      </div>
     </div>
-    <button class="generate">Generer Sprintnavn</button>
-  </div>
-  <button class="snapshot">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1920">
-      <path fill-rule="evenodd" d="M1706.67 106.667h-320V0h320C1824.49 0 1920 95.513 1920 213.333v320h-106.67v-320c0-58.91-47.75-106.666-106.66-106.666ZM533.333 0v106.667h-320c-58.91 0-106.666 47.756-106.666 106.666v320H0v-320C0 95.513 95.513 0 213.333 0h320ZM0 1386.67h106.667v320c0 58.91 47.756 106.66 106.666 106.66h320V1920h-320C95.513 1920 0 1824.49 0 1706.67v-320ZM1386.67 1920v-106.67h320c58.91 0 106.66-47.75 106.66-106.66v-320H1920v320c0 117.82-95.51 213.33-213.33 213.33h-320ZM1280 960c0 176.73-143.27 320-320 320-176.731 0-320-143.27-320-320 0-176.731 143.269-320 320-320 176.73 0 320 143.269 320 320Zm106.67 0c0 235.64-191.03 426.67-426.67 426.67-235.641 0-426.667-191.03-426.667-426.67 0-235.641 191.026-426.667 426.667-426.667 235.64 0 426.67 191.026 426.67 426.667Z"/>
-    </svg>
-    <span>Kopier skjermbilde</span>
-  </button>
-  <div class="big-hand">🫲</div>
+  </main>
+  <footer>
+    <div class="content">
+      <p>Vennligst vær oppmerksom på at alle navn som blir generert, er helt tilfeldige. Noen av disse navnene kan virke meningsløse eller potensielt støtende for enkelte.</p>
+      <p>SNAG har så langt <span class="total-words">0</span> ord i banken.</p>  
+    </div>
+  </footer>
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   <script src="app.js" type="module"></script>
 </body>
