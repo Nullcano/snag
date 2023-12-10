@@ -14,7 +14,7 @@ const allWords = [...commonWords, ...midWords, ...firstNames, ...lastNames];
 const recentSuggestions = [];
 
 document.querySelector('.snapshot').addEventListener('click', function() {
-  html2canvas(container).then(canvas => canvas.toBlob(blob => navigator.clipboard.write([new ClipboardItem({'image/png': blob})])));
+  html2canvas(result).then(canvas => canvas.toBlob(blob => navigator.clipboard.write([new ClipboardItem({'image/png': blob})])));
 });
 
 button.addEventListener('click', () => {
@@ -26,7 +26,6 @@ button.addEventListener('mousedown', () => {
 button.addEventListener('mouseup', () => {
   button.style.transform = 'scale(1)';
 })
-
 
 function generateSprintName() {
   result.classList.remove('suggestion');
